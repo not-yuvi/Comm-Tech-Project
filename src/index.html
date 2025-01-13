@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+</head>
+
+<body>
+    <div class="w-full h-[50vh] bg-gray-200 flex ">
+        <div class="flex justify-center items-center h-full space-x-8">
+            <div class="text-center w-1/3">
+                <h1 class="text-4xl font-bold">Hello World</h1>
+                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus
+                    ultricies, ultricies nunc nec, ultricies nunc. Nullam nec purus ultricies, ultricies nunc nec,
+                    ultricies nunc.</p>
+            </div>
+            <div id="imagecontainer" class="flex justify-center items-center w-1/3">
+                <img src="https://picsum.photos/600/400" alt="placeholder" />
+            </div>
+        </div>
+    </div>
+
+    <div class="h-auto w-screen flex justify-center items-center mt-10">
+        <div id="imagecontainer" class="w-2/3 p-2">
+            <div id="masonry-grid" class="size-full ">
+                <div class="grid-sizer"></div>
+                <img class="grid-item hover:blur-sm hover:scale-95 hover:brightness-90 transition hover:" src="https://picsum.photos/600/500">
+                <img class="grid-item hover:blur-sm hover:scale-95 hover:brightness-90 transition hover:" src="https://picsum.photos/400/600">
+                <img class="grid-item hover:blur-sm hover:scale-95 hover:brightness-90 transition hover:" src="https://picsum.photos/500">
+                <img class="grid-item hover:blur-sm hover:scale-95 hover:brightness-90 transition hover:" src="https://picsum.photos/800/300">
+            </div>
+        </div>
+    </div>    
+
+    <script>
+        var grid = document.querySelector('#masonry-grid');
+        var msnry;
+
+        imagesLoaded(grid, function () {
+            // init Isotope after all images have loaded
+            msnry = new Masonry(grid, {
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',
+                percentPosition: true,
+                horizontalOrder: true,
+                gutter:10,
+        });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#imagecontainer {
+    display: block;
+}
+
+#masonry-grid {
+    display: block;
+}
+
+.grid-sizer {
+    width: calc((100% / 3) - (20px / 3)); /* 3 columns, 10px total gutter */
+}
+
+.grid-item {
+    width: calc((100% / 3) - (20px / 3)); /* Adjust for gutter */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Add bottom gutter */
+    object-fit: cover; /* Ensure image fits the box */
+}
+
+@media (max-width: 1024px) { /* For medium screens */
+    .grid-sizer,
+    .grid-item {
+        width: calc((100% / 2) - (10px / 2)); /* 2 columns, 10px total gutter */
+    }
+}
+
+@media (max-width: 768px) { /* For small screens */
+    .grid-sizer,
+    .grid-item {
+        width: 100%; /* 1 column, no gutter adjustment needed */
+    }
+}
