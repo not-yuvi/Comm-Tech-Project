@@ -76,7 +76,8 @@
                 imageContainer.innerHTML = ''; // Clear existing images
 
                 for (let file of data) {
-                    if (imageExtensions.includes(file.name.split('.').pop().toLowerCase())) {
+                    const extension = file.name.split('.').pop().toLowerCase();
+                    if (imageExtensions.includes(extension)) {
                         const div = document.createElement('div');
                         div.className = 'grid-item';
                         const img = document.createElement('img');
