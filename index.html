@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./output.css" rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 </head>
@@ -42,18 +42,18 @@
 
             // change image folder based on button click
             document.getElementById('nature-btn').addEventListener('click', function () {
-                imageFolder = '../public/images/nature/';
+                imageFolder = '/public/images/nature/';
                 localStorage.setItem('imageFolder', imageFolder);
                 // reload the browser window
                 window.location.reload();
             });
             document.getElementById('artists-btn').addEventListener('click', function () {
-                imageFolder = '../public/images/artists/';
+                imageFolder = '/public/images/artists/';
                 localStorage.setItem('imageFolder', imageFolder);
                 window.location.reload();
             });
             document.getElementById('toronto-btn').addEventListener('click', function () {
-                imageFolder = '../public/images/toronto/after/';
+                imageFolder = '/public/images/toronto/after/';
                 localStorage.setItem('imageFolder', imageFolder);
                 window.location.reload();
             });
