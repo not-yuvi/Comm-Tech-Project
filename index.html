@@ -82,11 +82,11 @@
                         const img = document.createElement('img');
                         if (imageFolder.includes('toronto')) {
                             //href/before
-                            img.src = `${href}`;
-                            img.setAttribute('data-after', href.replace('after', 'before'));
+                            img.src = file.download_url;
+                            img.setAttribute('data-after', file.download_url.replace('after', 'before'));
                         } else {
-                            img.src = `${href}`;
-                            img.setAttribute('data-video', `${href.replace('images', 'videos').replace(extension, 'mp4')}`); // Assuming video has the same name with .mp4 extension
+                            img.src = file.download_url;
+                            img.setAttribute('data-video', `${file.download_url.replace('images', 'videos').replace(extension, 'mp4')}`); // Assuming video has the same name with .mp4 extension
                         }
                         div.appendChild(img);
                         imageContainer.appendChild(div);
